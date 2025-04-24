@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-     <meta charset="UTF-8">
-     <title>Mensaje Secreto</title>
-     <style>
-         body { font-family: monospace; text-align: center; margin-top: 20%; }
-     </style>
+    <meta charset="UTF-8">
+    <title>Mensaje Secreto</title>
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+            margin-top: 20%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function traducirBinario() {
+            const binario = "01010100 01100101 00100000 01100001 01101101 01101111 00100000 01100011 01101111 01101110 00100000 01101100 01101111 01100011 01110101 01110010 01100001 00100000 01001110 01100001 01110100 01100001 01101100 01101001 01100001 00100000 01010011 01100001 01101100 01100001 01111010 01100001 01110010";
+            const texto = binario.split(' ').map(b => String.fromCharCode(parseInt(b, 2))).join('');
+            document.getElementById("mensajeTraducido").textContent = texto;
+        }
+    </script>
 </head>
 <body>
-     <h1>01010100 01100101 00100000 01100001 01101101 01101111 00100000 01100011 01101111 01101110 00100000 
-         01101100 01101111 01100011 01110101 01110010 01100001 00100000 01001110 01100001 01110100 01100001 
-         01101100 01101001 01100001 00100000 01010011 01100001 01101100 01100001 01111010 01100001 01110010 ❤️
-     </h1>
+    <h1>01010100 01100101 00100000 01100001 01101101 01101111 00100000 01100011 01101111 01101110 00100000 
+        01101100 01101111 01100011 01110101 01110010 01100001 00100000 01001110 01100001 01110100 01100001 
+        01101100 01101001 01100001 00100000 01010011 01100001 01101100 01100001 01111010 01100001 01110010 ❤️
+    </h1>
+    <button onclick="traducirBinario()">Traducir a Texto</button>
+    <p id="mensajeTraducido"></p>
 </body>
 </html>
